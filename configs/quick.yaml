@@ -1,0 +1,27 @@
+# Quick benchmark: small populations and budgets; target < 10 min on a laptop CPU.
+# A smoke test of the whole pipeline: its learned agents are deliberately under-trained.
+# Writes to results/quick and figures/quick so it never overwrites the full run.
+name: quick
+experiments: [E0, TUNE, TUNE_RL, TUNE_OFFLINE, TRAIN, TRAIN_OFFLINE, E1, E2, E2X, E3, E4, E5]
+results_dir: results/quick
+figures_dir: figures/quick
+eval:
+  n_test_machines: 20
+  n_val_machines: 10
+  n_oracle_check: 300
+  n_bootstrap: 300
+tuning:
+  n_trials: 3
+rl:
+  total_steps: 10000
+  n_seeds: 2
+offline:
+  n_steps: 3000
+  n_seeds: 2
+  dataset_sizes: [5000, 10000]
+  e5_sizes: [5000, 10000]
+  e5_noises: [0.005, 0.02]
+  e5_seeds: 2
+drift:
+  n_episodes: 30
+  n_machines: 2

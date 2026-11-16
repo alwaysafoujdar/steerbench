@@ -1,0 +1,25 @@
+# Full benchmark: the numbers reported in the README and notebook; target < 2 h on a laptop CPU.
+name: full
+experiments: [E0, TUNE, TUNE_RL, TUNE_OFFLINE, TRAIN, TRAIN_OFFLINE, E1, E2, E2X, E3, E4, E5]
+results_dir: results
+figures_dir: figures
+eval:
+  n_test_machines: 50
+  n_val_machines: 20
+  n_oracle_check: 1000
+  n_bootstrap: 1000
+tuning:
+  n_trials: 6
+rl:
+  total_steps: 100000
+  n_seeds: 5
+offline:
+  n_steps: 20000
+  n_seeds: 5
+  dataset_sizes: [10000, 50000]
+  e5_sizes: [10000, 50000]
+  e5_noises: [0.005, 0.02, 0.05]
+  e5_seeds: 3
+drift:
+  n_episodes: 200
+  n_machines: 5

@@ -1,0 +1,49 @@
+{
+  "BC": {
+    "learning_rate": 0.00016163669871660028
+  },
+  "BO": {
+    "box_fraction": 0.5,
+    "local_fraction": 0.5,
+    "xi": 0.001
+  },
+  "BO-SVDmodes": {
+    "box_fraction": 0.5,
+    "local_fraction": 0.5,
+    "n_modes": 4,
+    "xi": 0.001
+  },
+  "RLS": {
+    "dither": 0.00026316199278713856,
+    "forgetting": 0.981530489546941,
+    "gain": 0.8208656366467313,
+    "prior_std": 2.738610474562921
+  },
+  "RM-SVD": {
+    "gain": 1.0,
+    "kick": 0.1,
+    "tikhonov": 0.0
+  },
+  "SAC": {
+    "action_scale_mrad": 0.01,
+    "batch_size": 128,
+    "gamma": 0.9,
+    "learning_rate": 0.00012836982963580074,
+    "tau": 0.005
+  },
+  "SVD": {
+    "gain": 0.79260889371416,
+    "tikhonov": 5.6888304455762535
+  },
+  "TD3": {
+    "action_scale_mrad": 0.02,
+    "batch_size": 256,
+    "gamma": 0.9,
+    "learning_rate": 0.00022574834513511353,
+    "tau": 0.005
+  },
+  "TD3+BC": {
+    "alpha": 0.051110265715668554,
+    "learning_rate": 0.0001318192509168433
+  }
+}

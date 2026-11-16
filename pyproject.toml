@@ -1,0 +1,51 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "steerbench"
+version = "0.1.0"
+description = "Sample-efficient trajectory correction on a simulated transfer line: classical, Bayesian-optimisation and RL methods compared."
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+authors = [{ name = "Aman K. Foujdar" }]
+license = { text = "MIT" }
+dependencies = [
+    "numpy",
+    "scipy",
+    "matplotlib",
+    "pandas",
+    "pyyaml",
+    "gymnasium",
+    "stable-baselines3",
+    "torch",
+    "scikit-learn",
+    "d3rlpy>=2,<3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "ruff", "jupyter"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+extend-exclude = ["*.md"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "NPY", "D"]
+ignore = ["D105", "D107", "D203", "D213", "D100", "D104", "D401"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D"]
+"scripts/*" = ["D"]
+"notebooks/*" = ["D", "E402"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
